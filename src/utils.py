@@ -42,8 +42,13 @@ class TranslationPreprocessor:
         return processed
     
     def tokenize_pairs(self, processed_data):
-        return [(vi.split(), en.split()) for vi, en in processed_data]
-    
+        tokenized_data = []
+        for vi, en in processed_data:
+            vi_tokens = vi.split()
+            en_tokens = en.split()
+            tokenized_data.append((vi_tokens, en_tokens))
+        return tokenized_data
+        
     # ===== Vocabulary =====
     def build_vocab(self, tokenized_data, idx, min_freq, specials):
         counter = Counter()
