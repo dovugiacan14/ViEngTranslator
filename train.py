@@ -74,8 +74,8 @@ def main(args):
     processor = TranslationPreprocessor()
     data_info = processor.prepare_datasets(vi_sentences, eng_sentences, args.test_size, args.val_size)
 
-    print(f"Vocab Source: {data_info.get("vocab_size_src")}")
-    print(f"Vocab Target: {data_info.get("vocab_size_tgt")}")
+    print(f"Vocab Source: {data_info.get('vocab_size_src')}")
+    print(f"Vocab Target: {data_info.get('vocab_size_tgt')}")
 
     # build dataloader 
     train_dataset = TranslationDataset(data_info.get('train'))
